@@ -6,7 +6,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$data = array('title' => 'Dashboard Absensi',
-                      'isi' => 'absensi/dashboard/dashboard_absensi' );
-        $this->load->view('layout/wrapper',$data, FALSE);
+                      'isi' => 'login/form_login' );
+        $this->load->view('login/form_login',$data, FALSE);
 	}
 }

@@ -19,7 +19,7 @@
                                     </div>
                                 </div>
                                 <div class="text-center">
-                                    <h1 class="mb-1 text-white">Selamat Datang John,</h1>
+                                    <h1 class="mb-1 text-white">Selamat Datang <?= $this->session->userdata('nama_user'); ?>,</h1>
                                     <p class="card-text m-auto w-75">
                                         You have done <strong>57.6%</strong> more sales today. Check your new badge in your profile.
                                     </p>
@@ -46,8 +46,8 @@
                                     <div class="d-flex align-items-center flex-column">
                                         <img class="img-fluid rounded mt-3 mb-2" src="<?php echo base_url() ?>/vuexy/app-assets/images/portrait/small/avatar-s-2.jpg" height="110" width="110" alt="User avatar" />
                                         <div class="user-info text-center">
-                                            <h4>Gertrude Barton</h4>
-                                            <span class="badge bg-light-secondary">NIK</span>
+                                            <h4><?= $karyawan->nama; ?></h4>
+                                            <span class="badge bg-light-secondary"><?= $karyawan->nik; ?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -57,15 +57,15 @@
                                     <ul class="list-unstyled">
                                         <li class="mb-75">
                                             <span class="fw-bolder me-25">Jabatan:</span>
-                                            <span>violet.dev</span>
+                                            <span><?= $karyawan->nama_jabatan; ?></span>
                                         </li>
                                         <li class="mb-75">
                                             <span class="fw-bolder me-25">Email:</span>
-                                            <span>vafgot@vultukir.org</span>
+                                            <span><?= $karyawan->email; ?></span>
                                         </li>
                                         <li class="mb-75">
                                             <span class="fw-bolder me-25">No. Telp:</span>
-                                            <span class="badge bg-light-success">Active</span>
+                                            <span class="badge bg-light-success"><?= $karyawan->no_hp; ?></span>
                                         </li>
                                         
                                     </ul>

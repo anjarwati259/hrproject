@@ -39,10 +39,4 @@ class Login extends CI_Controller {
 		//ambil fungsi logout dari simple_login
 	    $this->simple_login->logout();
 	}
-
-	public function dashboard(){
-		$data = array('title' => 'Dashboard Absensi',
-                      'isi' => 'absensi/dashboard/dashboard_absensi' );
-        $this->load->view('layout/wrapper',$data, FALSE);
-	}
 }

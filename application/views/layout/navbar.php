@@ -138,20 +138,24 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>
-                </li>
-                <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="app-email.html"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Email</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="app-chat.html"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Chat</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="app-todo.html"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="Todo">Todo</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="app-calendar.html"><i data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="Calendar">Calendar</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="app-kanban.html"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Kanban">Kanban</span></a>
-                </li>
+                <?php 
+                    $dataMenu = getMenu($this->session->userdata('id_role'));
+                    $menu = $dataMenu['mainMenu'];
+                    $subMenu = $dataMenu['subMenu'];
+                    foreach ($menu as $kMenu => $vMenu) {
+                      if($vMenu['isParent'] != 1){?>
+                        <li class=" nav-item"><a class="d-flex align-items-center" href="<?= $vMenu['url']; ?>"><?= $vMenu['icon']; ?><span class="menu-title text-truncate" data-i18n="Dashboards"><?= $vMenu['menu']; ?></span></a>
+                        </li>
+                    <?php }else{ ?>
+                        <li class=" navigation-header"><span data-i18n="Apps &amp; Pages"><?= $vMenu['menu']; ?></span><i data-feather="more-horizontal"></i>
+                        </li>
+                    <?php
+                    foreach ($subMenu as $key => $value) {
+                       if($vMenu['idParent'] == $value['parent']){ ?>
+                        <li class=" nav-item"><a class="d-flex align-items-center" href="<?= $value['url']; ?>"><?= $value['icon']; ?><span class="menu-title text-truncate" data-i18n="Email"><?= $value['menu']; ?></span></a>
+                        </li>
+                    <?php } } ?>
+                <?php } } ?>
             </ul>
         </div>
     </div>

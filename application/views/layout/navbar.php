@@ -93,7 +93,7 @@
                     <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="<?php echo base_url() ?>/vuexy/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
-                        <a class="dropdown-item" href="auth-login-cover.html"><i class="me-50" data-feather="power"></i> Logout</a>
+                        <a class="dropdown-item" href="<?php echo base_url('login/logout') ?>"><i class="me-50" data-feather="power"></i> Logout</a>
                     </div>
                 </li>
             </ul>

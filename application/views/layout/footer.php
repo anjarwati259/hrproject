@@ -1,3 +1,6 @@
+        </div>
+    </div>
+</div>
 <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
 
@@ -8,24 +11,18 @@
     <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
     <!-- END: Footer-->
 
-
-    <!-- BEGIN: Vendor JS-->
-    <script src="<?php echo base_url() ?>/vuexy/app-assets/vendors/js/vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
-
     <!-- BEGIN: Page Vendor JS-->
-    <script src="<?php echo base_url() ?>/vuexy/app-assets/vendors/js/charts/apexcharts.min.js"></script>
     <script src="<?php echo base_url() ?>/vuexy/app-assets/vendors/js/extensions/toastr.min.js"></script>
     <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: sweetalert JS-->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script> -->
+    <!-- END: sweetalert JS-->
 
     <!-- BEGIN: Theme JS-->
     <script src="<?php echo base_url() ?>/vuexy/app-assets/js/core/app-menu.js"></script>
     <script src="<?php echo base_url() ?>/vuexy/app-assets/js/core/app.js"></script>
     <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
-    <script src="<?php echo base_url() ?>/vuexy/app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
-    <!-- END: Page JS-->
 
     <script>
         $(window).on('load', function() {

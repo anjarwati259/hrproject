@@ -90,7 +90,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder"><?= $this->session->userdata('nama_user'); ?></span><span class="user-status"><?php echo $this->session->userdata('hak_akses'); ?></span></div><span class="avatar"><img class="round" src="<?php echo base_url() ?>/vuexy/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                    <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="<?php echo base_url() ?>/vuexy/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
                         <a class="dropdown-item" href="<?php echo base_url('login/logout') ?>"><i class="me-50" data-feather="power"></i> Logout</a>
@@ -138,33 +138,24 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <?php 
-                    $dataMenu = getMenu($this->session->userdata('id_role'));
-                    $menu = $dataMenu['mainMenu'];
-                    $subMenu = $dataMenu['subMenu'];
-                    foreach ($menu as $kMenu => $vMenu) {
-                      if($vMenu['isParent'] != 1){?>
-                        <li class=" nav-item"><a class="d-flex align-items-center" href="<?= base_url() ?><?= $vMenu['url']; ?>"><?= $vMenu['icon']; ?><span class="menu-title text-truncate" data-i18n="Dashboards"><?= $vMenu['menu']; ?></span></a>
-                        </li>
-                    <?php }else{ ?>
-                        <li class=" navigation-header"><span data-i18n="Apps &amp; Pages"><?= $vMenu['menu']; ?></span><i data-feather="more-horizontal"></i>
-                        </li>
-                    <?php
-                    foreach ($subMenu as $key => $value) {
-                       if($vMenu['idParent'] == $value['parent']){ ?>
-                        <li class=" nav-item"><a class="d-flex align-items-center" href="<?= base_url() ?><?= $value['url']; ?>"><?= $value['icon']; ?><span class="menu-title text-truncate" data-i18n="Email"><?= $value['menu']; ?></span></a>
-                        </li>
-                    <?php } } ?>
-                <?php } } ?>
+                <?php $icon = '<i data-feather="home"></i>'; ?>
+                <?php if($icon){ ?>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><?php echo $icon ?><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span></a>
+                </li>
+            <?php } ?>
+                <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-email.html"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Email</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-chat.html"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Chat</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-todo.html"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="Todo">Todo</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-calendar.html"><i data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="Calendar">Calendar</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="app-kanban.html"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Kanban">Kanban</span></a>
+                </li>
             </ul>
         </div>
     </div>
     <!-- END: Main Menu-->
-    <!-- BEGIN: Content-->
-    <div class="app-content content ">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper container-xxl p-0">
-            <div class="content-header row">
-            </div>
-            <div class="content-body">

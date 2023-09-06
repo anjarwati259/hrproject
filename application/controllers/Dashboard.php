@@ -11,7 +11,7 @@ class Dashboard extends CI_Controller {
   	}
 
 	public function dashboard_absensi(){
-		$karyawan = $this->karyawan_model->getKaryawanById($this->session->userdata('nik'));
+		$karyawan = $this->karyawan_model->getKaryawanByNik($this->session->userdata('nik'));
 		$data = array('title' => 'Dashboard Absensi',
 					  'karyawan' => $karyawan,
                       'isi' => 'absensi/dashboard/dashboard_absensi' );

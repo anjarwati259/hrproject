@@ -51,6 +51,11 @@
     <script src="<?php echo base_url() ?>/vuexy//app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js"></script>
     <script src="<?php echo base_url() ?>/vuexy//app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
 
+    <!--BEGIN: select 2 -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>/vuexy/app-assets/vendors/css/forms/select/select2.min.css">
+    <script src="<?php echo base_url() ?>/vuexy/app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+    <!-- END:select2 -->
+
 </head>
 <!-- END: Head-->
 

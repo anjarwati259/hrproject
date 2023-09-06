@@ -24,7 +24,7 @@ class Jabatan_model extends CI_Model
         $this->db->where('status','1');
         $i = 0;
         foreach ($this->column_search as $item){
-            if($_POST['search']['value'])
+            if(isset($_POST['search']['value']))
             {
                 if($i===0){
                     $this->db->group_start(); 
@@ -49,8 +49,10 @@ class Jabatan_model extends CI_Model
 
     function getJabatan(){
         $this->query_jabatan();
-        if($_POST['length'] != -1){
-        	$this->db->limit($_POST['length'], $_POST['start']);
+        if(isset($_POST['length'])){
+            if($_POST['length'] != -1){
+            	$this->db->limit($_POST['length'], $_POST['start']);
+            }
         }
         $query = $this->db->get();
         return $query->result();

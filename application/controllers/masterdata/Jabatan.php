@@ -60,7 +60,8 @@ class Jabatan extends CI_Controller {
                 $data = array(  'nama_jabatan' => $nama_jabatan,
                                 'kode_jabatan' => $kode_jabatan,
                                 'status'        => '1',
-                                'created_at'    => date('Y-m-d H:i:sa')
+                                'created_at'    => date('Y-m-d H:i:sa'),
+                                'created_by'    => $this->session->userdata('nik')
                         );
                 $result = $this->jabatan_model->insert($data);
             }else{

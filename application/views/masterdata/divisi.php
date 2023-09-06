@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="col-md-12">
-                        <label class="form-label" for="nama_divisi"><b>Nama DIvisi</b></label>
+                        <label class="form-label" for="nama_divisi"><b>Nama Divisi</b></label>
                         <input type="text" name="nama_divisi" id="nama_divisi" class="form-control" placeholder="Depertement Teknologo Informasi" />
                     </div>
 

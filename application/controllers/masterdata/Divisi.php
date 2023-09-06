@@ -60,14 +60,15 @@ class Divisi extends CI_Controller {
                 $data = array(  'nama_divisi' => $nama_divisi,
                                 'kode_divisi' => $kode_divisi,
                                 'status'        => '1',
-                                'created_at'    => date('Y-m-d H:i:sa')
+                                'created_at'    => date('Y-m-d H:i:sa'),
+                                'created_by'    => $this->session->userdata('nik')
                         );
                 $result = $this->divisi_model->insert($data);
             }else{
                 $data = array(  'nama_divisi' => $nama_divisi,
                                 'kode_divisi' => $kode_divisi,
                                 'status'        => '1',
-                                'id'            => $id
+                                'id'            => $id,
                         );
                 $result = $this->divisi_model->edit($data);
             }

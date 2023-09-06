@@ -18,8 +18,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Kode Divisi</th>
-                                <th>Nama Divisi</th>
+                                <th>Kode Jabatan</th>
+                                <th>Nama Jabatan</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -39,21 +39,21 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body px-sm-5 mx-50 pb-5">
-                <h1 class="text-center mb-1" id="titleCard">Add New Divisi</h1>
+                <h1 class="text-center mb-1" id="titleCard">Add New Jabatan</h1>
 
                 <!-- form -->
-                <form id="form-divisi" class="row gy-1 gx-2 mt-75" onsubmit="return false">
+                <form id="form-jabatan" class="row gy-1 gx-2 mt-75" onsubmit="return false">
                     <input type="hidden" name="id" id="id">
                     <div class="col-12">
-                        <label class="form-label" for="kode_divisi"><b>Kode Divisi</b></label>
+                        <label class="form-label" for="kode_jabatan"><b>Kode Jabatan</b></label>
                         <div class="input-group input-group-merge">
-                            <input id="kode_divisi" name="kode_divisi" id="kode_divisi" class="form-control" type="text" placeholder="Exp. DIT"/>
+                            <input id="kode_jabatan" name="kode_jabatan" id="kode_jabatan" class="form-control" type="text" placeholder="Exp. DIT"/>
                         </div>
                     </div>
 
                     <div class="col-md-12">
-                        <label class="form-label" for="nama_divisi"><b>Nama DIvisi</b></label>
-                        <input type="text" name="nama_divisi" id="nama_divisi" class="form-control" placeholder="Depertement Teknologo Informasi" />
+                        <label class="form-label" for="nama_jabatan"><b>Nama DIvisi</b></label>
+                        <input type="text" name="nama_jabatan" id="nama_jabatan" class="form-control" placeholder="Depertement Teknologo Informasi" />
                     </div>
 
                     <div class="col-12 text-center">
@@ -70,4 +70,4 @@
 </div>
 <!--/ add new card modal  -->
 
-<?php include('js/divisi_ajax.php'); ?>
+<?php include('js/jabatan_ajax.php'); ?>
